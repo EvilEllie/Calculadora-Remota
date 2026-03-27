@@ -1,0 +1,14 @@
+¿Por qué todos los métodos de la interfaz deben lanzar RemoteException?
+porque las llamadas se hacen por red y pues la red puede fallar o perderse la conexion, entonces java obliga a poner esa excepcion por si pasa algun error cuando el cliente llama al servidor
+
+¿Qué pasaría si ejecutas el cliente antes que el servidor?
+el cliente no encontraria el servicio y marcaria error porque el servidor todavia no esta corriendo ni publico la calculadora en el registry
+
+¿En cuál de los 4 archivos ocurre realmente el cálculo de la suma?
+en CalculadoraImpl, ahi es donde esta el codigo que hace la operacion de a + b y regresa el resultado
+
+¿Para qué sirve el Registry en RMI?
+es como un directorio donde el servidor registra sus objetos remotos y el cliente los busca con el nombre para poder usarlos
+
+¿Qué modificarías en el cliente si el servidor estuviera en otra computadora?
+cambiaria el "localhost" por la ip de la computadora donde esta corriendo el servidor para que el cliente se conecte ahi
