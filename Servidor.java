@@ -29,6 +29,12 @@ public class Servidor {
             System.out.println("  Esperando clientes...");
             System.out.println("==============================");
 
+            // Mantener el servidor corriendo indefinidamente
+            Object lock = new Object();
+            synchronized (lock) {
+                lock.wait(); // Hilo principal duerme para siempre
+            }
+
         } catch (Exception e) {
             System.err.println("Error al iniciar el servidor: " + e.getMessage());
             e.printStackTrace();
